@@ -26,33 +26,33 @@ import de.bgesw.app.game.tetris.Tetris;
 
 public class MenuView extends JPanel {
 	
-	JLabel lbl_name;
-	JLabel lbl_xp;
+	JLabel lbl_name; //Namesanzeige
+	JLabel lbl_xp; //XP Anzeige
 	JButton btn_start;
-	GameListPanel gamelist;
-	FriendListPanel friendlist;
-	public static BufferedImage img_defaultprofile;
+	GameListPanel gamelist; //Anzeige für die Spielliste
+	FriendListPanel friendlist; //Anzeige für die Freundesliste
+	public static BufferedImage img_defaultprofile; //Standard Profilbild
 	
 	public MenuView(Component parent)
 	{
 		try {
-			img_defaultprofile=ImageIO.read(this.getClass().getResource("defaultprofile.png"));
+			img_defaultprofile=ImageIO.read(this.getClass().getResource("defaultprofile.png")); //Standard Profilbild aus den Ressourcen laden
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		this.setBackground(AppClient.COLOR_BG);
-		this.setBounds(0, 0, parent.getWidth(), parent.getHeight());
-		Profile p = NetworkManager.getOwnProfile();
-		lbl_name = new JLabel(p.getName());
-		lbl_name.setForeground(Color.WHITE);
+		this.setBackground(AppClient.COLOR_BG); //Hintergrundfarbe setzen
+		this.setBounds(0, 0, parent.getWidth(), parent.getHeight()); //Bounds setzen, WICHTIG!
+		AppClient.ownprofile = NetworkManager.getOwnProfile(); //Profildaten erneut laden, um aktuelle XP zu haben
+		lbl_name = new JLabel(AppClient.ownprofile.getName());
+		lbl_name.setForeground(Color.WHITE); //Textfarbe
 		lbl_name.setBounds(parent.getWidth()-165, 2, 100, 20);
-		lbl_xp = new JLabel("XP: "+p.getXP());
+		lbl_xp = new JLabel("XP: "+AppClient.ownprofile.getXP());
 		lbl_xp.setForeground(Color.WHITE);
 		lbl_xp.setBounds(parent.getWidth()-165, 18, 100, 20);
 		btn_start = new JButton("Start");
 		btn_start.setBounds((parent.getWidth()/2)-50, 100, 100, 20);
-		btn_start.setActionCommand("start");
-		btn_start.addActionListener(new ButtonListener());
+		btn_start.setActionCommand("start"); //Action Command setzen
+		btn_start.addActionListener(new ButtonListener()); //Button Listener registrieren
 		gamelist = new GameListPanel();
 		gamelist.setBounds(10, 10, 200, 120);
 		friendlist = new FriendListPanel();
@@ -63,9 +63,9 @@ public class MenuView extends JPanel {
 		this.add(btn_start);
 		this.add(gamelist);
 		this.add(friendlist);
+		//Daten laden
 		AppClient.refreshGameCache();
 		AppClient.refreshFriendCache();
-		
 	}
 	
 	public void openGame(GameData g)
@@ -77,7 +77,7 @@ public class MenuView extends JPanel {
 		AppClient.view.requestFocusInWindow();
 	}
 	
-	public Game getNewGameInstance(GameData d)
+	public Game getNewGameInstance(GameData d) //Erstelle ein Game Objekt für die gegebenen Spieldaten
 	{
 		switch(d.getGame(d.getRound()))
 		{
@@ -100,7 +100,7 @@ public class MenuView extends JPanel {
 		gr.drawImage(ProfilePictureCache.getImage(AppClient.ownprofile.getUUID()), this.getParent().getWidth()-width+8,8, new Color(0x58,0x58,0x58,0x00),null);
 	}
 	
-	static class GameListPanel extends JPanel
+	static class GameListPanel extends JPanel //Panel für die Spielliste
 	{
 		GameListPanel()
 		{
@@ -116,7 +116,7 @@ public class MenuView extends JPanel {
 			int height = 120;
 			Graphics2D gr = (Graphics2D)g;
 			int dr = 0;
-			for(int i=0;i<AppClient.gamecache.size()&&dr<5;i++){
+			for(int i=0;i<AppClient.gamecache.size()&&dr<5;i++){ //Alle laufenden Spiele zeichnen, aber maximal 5
 				if(!AppClient.gamecache.get(i).isFinished())
 				{
 					GameData d = AppClient.gamecache.get(i);
@@ -128,7 +128,8 @@ public class MenuView extends JPanel {
 				}
 			}
 		}
-		class GameListMouseListener implements MouseListener
+		
+		class GameListMouseListener implements MouseListener //TODO Dynamische Elementerkennung
 		{
 			public void mouseClicked(MouseEvent e) {
 				ArrayList<GameData> dg = new ArrayList<GameData>();
@@ -139,15 +140,15 @@ public class MenuView extends JPanel {
 						dg.add(AppClient.gamecache.get(i));
 					}
 				}
-				if(e.getY()>=0 && e.getY()<30)
+				if(e.getY()>=0 && e.getY()<30) //Klick auf Spiel1
 				{
 					GameData d = dg.get(0);
-					if(d.isCurrentPlayer(AppClient.ownprofile.getUUID()))
+					if(d.isCurrentPlayer(AppClient.ownprofile.getUUID())) //Überprüfen ob der Spieler an der Reihe ist
 					{
-						((MenuView)AppClient.view).openGame(d);
+						((MenuView)AppClient.view).openGame(d); //Spiel starten
 					}
 				}
-				if(e.getY()>=30 && e.getY()<60)
+				if(e.getY()>=30 && e.getY()<60) //Klick auf Spiel2
 				{
 					GameData d = dg.get(1);
 					if(d.isCurrentPlayer(AppClient.ownprofile.getUUID()))
@@ -155,7 +156,7 @@ public class MenuView extends JPanel {
 						((MenuView)AppClient.view).openGame(d);
 					}
 				}
-				if(e.getY()>=60 && e.getY()<90)
+				if(e.getY()>=60 && e.getY()<90) //Klick auf Spiel3
 				{
 					GameData d = dg.get(2);
 					if(d.isCurrentPlayer(AppClient.ownprofile.getUUID()))
@@ -171,7 +172,7 @@ public class MenuView extends JPanel {
 		}
 	}
 	
-	static class FriendListPanel extends JPanel
+	static class FriendListPanel extends JPanel //Panel für die Freundesliste
 	{
 		FriendListPanel()
 		{
@@ -185,14 +186,14 @@ public class MenuView extends JPanel {
 			int width = 200;
 			int height = 120;
 			Graphics2D gr = (Graphics2D)g;
-			for(int i=0;i<AppClient.friendcache.size()&&i<3;i++)
+			for(int i=0;i<AppClient.friendcache.size()&&i<3;i++) //Alle Freunde zeichnen, aber maximal 3
 			{
 				gr.setColor(Color.white);
 				gr.drawImage(ProfilePictureCache.getImage(AppClient.friendcache.get(i).getUUID()), 5,15+(i*30), new Color(0x58,0x58,0x58,0x00), null);
 				gr.drawString(AppClient.friendcache.get(i).getName().toString(), 35, 30+(i*30));
 			}
 		}
-		class FriendListMouseListener implements MouseListener
+		class FriendListMouseListener implements MouseListener //TODO Dynamische Elementerkennung
 		{
 			public void mouseClicked(MouseEvent e) {
 				if(e.getY()>=0 && e.getY()<30)
@@ -246,7 +247,7 @@ public class MenuView extends JPanel {
 				}
 				System.out.println(id);*/
 				
-				NetworkManager.newGame(UUID.randomUUID());
+				NetworkManager.newGame(UUID.randomUUID()); //Neues Spiel gegen Random UUID !ACHTUNG! Nicht mehr benutzen!!! Das Profil einer Random UUID wird nicht gefunden == CRASH!
 				for(Integer i : NetworkManager.getGameList(GameListType.ALL))
 				{
 					System.out.println(""+i);

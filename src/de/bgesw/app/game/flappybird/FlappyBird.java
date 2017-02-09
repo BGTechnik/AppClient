@@ -95,9 +95,6 @@ public class FlappyBird extends Game {
 		
 		setColor(Color.YELLOW);									//draw flappy dot
 		drawFilledRectangle(getWidth()/2,bh,20,20);				//draw flappy dot
-		
-		
-		if(gameover==1);
 	}
 	
 	private static int getRandInt(int min,int max)

@@ -25,9 +25,7 @@ public class Tetris extends Game {
 	{
 		super(d);
 		ctype = TileType.random();
-		//ctype = TileType.TypeI;
 		drawTetris(ctype);
-		//setUPS(2);
 		updater();
 	}
 

@@ -10,11 +10,11 @@ import javax.imageio.ImageIO;
 
 public class ProfilePictureCache {
 	
-	private static HashMap<UUID,BufferedImage> images = new HashMap<UUID,BufferedImage>();
-	private static final String url = "http://192.168.1.82/app/profileimages/%s.png";
-	private static BufferedImage def = null;
+	private static HashMap<UUID,BufferedImage> images = new HashMap<UUID,BufferedImage>(); //Buffer
+	private static final String url = "http://192.168.1.82/app/profileimages/%s.png"; //URL unter der die Profilbilder liegen
+	private static BufferedImage def = null; //Standardprofilbild
 	
-	public static BufferedImage getImage(UUID uuid)
+	public static BufferedImage getImage(UUID uuid) //Lade Profilbild herunter, nutze Default wenn nicht verfügbar, nutze Buffer wenn es bereits im Buffer liegt
 	{
 		if(def==null)
 		{
@@ -36,7 +36,7 @@ public class ProfilePictureCache {
 		return images.get(uuid);
 	}
 	
-	public static BufferedImage getImage(String url)
+	public static BufferedImage getImage(String url) //Lade Bild von URL herunter
 	{
 		try {
 			BufferedImage img = ImageIO.read(new URL(url));

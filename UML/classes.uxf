@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2.0">
-  <zoom_level>4</zoom_level>
+  <zoom_level>1</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>292</x>
-      <y>596</y>
-      <w>196</w>
-      <h>92</h>
+      <x>321</x>
+      <y>285</y>
+      <w>49</w>
+      <h>23</h>
     </coordinates>
     <panel_attributes>Chat
 -
@@ -30,10 +30,10 @@
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>200</x>
-      <y>580</y>
-      <w>380</w>
-      <h>388</h>
+      <x>298</x>
+      <y>281</y>
+      <w>95</w>
+      <h>97</h>
     </coordinates>
     <panel_attributes>app.data</panel_attributes>
     <additional_attributes/>
@@ -41,10 +41,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>212</x>
-      <y>772</y>
-      <w>52</w>
-      <h>28</h>
+      <x>301</x>
+      <y>329</y>
+      <w>13</w>
+      <h>7</h>
     </coordinates>
     <panel_attributes>/DataPacket/
 -
@@ -56,10 +56,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>292</x>
-      <y>704</y>
-      <w>276</w>
-      <h>156</h>
+      <x>321</x>
+      <y>312</y>
+      <w>69</w>
+      <h>39</h>
     </coordinates>
     <panel_attributes>GameData
 -
@@ -91,10 +91,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>292</x>
-      <y>868</y>
-      <w>100</w>
-      <h>92</h>
+      <x>321</x>
+      <y>353</y>
+      <w>25</w>
+      <h>23</h>
     </coordinates>
     <panel_attributes>Profile
 -
@@ -117,10 +117,10 @@ _-levelups:int[]_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>456</x>
-      <y>896</y>
-      <w>60</w>
-      <h>36</h>
+      <x>362</x>
+      <y>360</y>
+      <w>15</w>
+      <h>9</h>
     </coordinates>
     <panel_attributes>Tuple&lt;A,B&gt;
 -
@@ -133,10 +133,10 @@ _-levelups:int[]_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>232</x>
-      <y>796</y>
-      <w>12</w>
-      <h>88</h>
+      <x>306</x>
+      <y>335</y>
+      <w>3</w>
+      <h>22</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
@@ -144,10 +144,10 @@ _-levelups:int[]_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>232</x>
-      <y>872</y>
-      <w>68</w>
-      <h>12</h>
+      <x>306</x>
+      <y>354</y>
+      <w>17</w>
+      <h>3</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
@@ -155,10 +155,10 @@ _-levelups:int[]_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>260</x>
-      <y>772</y>
-      <w>40</w>
-      <h>12</h>
+      <x>313</x>
+      <y>329</y>
+      <w>10</w>
+      <h>3</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
@@ -166,10 +166,10 @@ _-levelups:int[]_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>232</x>
-      <y>604</y>
-      <w>12</w>
-      <h>176</h>
+      <x>306</x>
+      <y>287</y>
+      <w>3</w>
+      <h>44</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;420.0;10.0;10.0</additional_attributes>
@@ -177,10 +177,10 @@ _-levelups:int[]_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>232</x>
-      <y>604</y>
-      <w>68</w>
-      <h>12</h>
+      <x>306</x>
+      <y>287</y>
+      <w>17</w>
+      <h>3</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
@@ -188,10 +188,10 @@ _-levelups:int[]_
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>628</x>
-      <y>712</y>
-      <w>104</w>
-      <h>112</h>
+      <x>405</x>
+      <y>314</y>
+      <w>26</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>app.data.encryption</panel_attributes>
     <additional_attributes/>
@@ -199,10 +199,10 @@ _-levelups:int[]_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
-      <y>732</y>
-      <w>80</w>
-      <h>28</h>
+      <x>408</x>
+      <y>319</y>
+      <w>20</w>
+      <h>7</h>
     </coordinates>
     <panel_attributes>/Encryption/
 -
@@ -214,10 +214,10 @@ _-levelups:int[]_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>640</x>
-      <y>788</y>
-      <w>80</w>
-      <h>28</h>
+      <x>408</x>
+      <y>333</y>
+      <w>20</w>
+      <h>7</h>
     </coordinates>
     <panel_attributes>NoEncryption
 -
@@ -229,10 +229,10 @@ _-levelups:int[]_
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>676</x>
-      <y>756</y>
-      <w>12</w>
-      <h>40</h>
+      <x>417</x>
+      <y>325</y>
+      <w>3</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
@@ -240,10 +240,10 @@ _-levelups:int[]_
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>844</x>
-      <y>1200</y>
-      <w>664</w>
-      <h>300</h>
+      <x>459</x>
+      <y>436</y>
+      <w>166</w>
+      <h>75</h>
     </coordinates>
     <panel_attributes>appclient</panel_attributes>
     <additional_attributes/>
@@ -251,10 +251,10 @@ _-levelups:int[]_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>904</x>
-      <y>1216</y>
-      <w>44</w>
-      <h>40</h>
+      <x>474</x>
+      <y>440</y>
+      <w>11</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enum&gt;&gt;
 GameListType
@@ -267,10 +267,10 @@ RUNNING</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>852</x>
-      <y>1216</y>
-      <w>48</w>
-      <h>32</h>
+      <x>461</x>
+      <y>440</y>
+      <w>12</w>
+      <h>8</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enum&gt;&gt;
 GameType
@@ -282,10 +282,10 @@ TETRIS</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>956</x>
-      <y>1216</y>
-      <w>108</w>
-      <h>48</h>
+      <x>487</x>
+      <y>440</y>
+      <w>27</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>ProfilePictureCache
 -
@@ -300,10 +300,10 @@ _+getImage(url:String):BufferedImage_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>852</x>
-      <y>1260</y>
-      <w>84</w>
-      <h>92</h>
+      <x>461</x>
+      <y>451</y>
+      <w>21</w>
+      <h>23</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enum&gt;&gt;
 NetworkMethod
@@ -325,10 +325,10 @@ UPDATEGAMEDATA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>948</x>
-      <y>1268</y>
-      <w>140</w>
-      <h>84</h>
+      <x>485</x>
+      <y>453</y>
+      <w>35</w>
+      <h>21</h>
     </coordinates>
     <panel_attributes>NetworkManager
 -
@@ -349,10 +349,10 @@ _+updateGameData(d:GameData)_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1096</x>
-      <y>1224</y>
-      <w>116</w>
-      <h>244</h>
+      <x>522</x>
+      <y>442</y>
+      <w>29</w>
+      <h>61</h>
     </coordinates>
     <panel_attributes>/Game/
 -
@@ -399,10 +399,10 @@ _+id:int_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>904</x>
-      <y>1364</y>
-      <w>96</w>
-      <h>116</h>
+      <x>474</x>
+      <y>477</y>
+      <w>24</w>
+      <h>29</h>
     </coordinates>
     <panel_attributes>AppClient
 -
@@ -428,10 +428,10 @@ _+getProfile(uuid:UUID):Profile_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>924</x>
-      <y>1532</y>
-      <w>56</w>
-      <h>16</h>
+      <x>479</x>
+      <y>519</y>
+      <w>14</w>
+      <h>4</h>
     </coordinates>
     <panel_attributes>javax.swing::JFrame
 -
@@ -441,10 +441,10 @@ _+getProfile(uuid:UUID):Profile_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1356</x>
-      <y>1224</y>
-      <w>120</w>
-      <h>156</h>
+      <x>587</x>
+      <y>442</y>
+      <w>30</w>
+      <h>39</h>
     </coordinates>
     <panel_attributes>GameView
 {innerclass
@@ -482,10 +482,10 @@ _-CONTROL_HEIGHT:int_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1220</x>
-      <y>1228</y>
-      <w>120</w>
-      <h>260</h>
+      <x>553</x>
+      <y>443</y>
+      <w>30</w>
+      <h>65</h>
     </coordinates>
     <panel_attributes>MenuView
 {innerclass
@@ -548,10 +548,10 @@ _+img_defaultprofile:BufferedImage_
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>688</x>
-      <y>1180</y>
-      <w>108</w>
-      <h>160</h>
+      <x>420</x>
+      <y>431</y>
+      <w>27</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>app.game.flappybird</panel_attributes>
     <additional_attributes/>
@@ -559,10 +559,10 @@ _+img_defaultprofile:BufferedImage_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>696</x>
-      <y>1196</y>
-      <w>92</w>
-      <h>136</h>
+      <x>422</x>
+      <y>435</y>
+      <w>23</w>
+      <h>34</h>
     </coordinates>
     <panel_attributes>FlappyBird
 --
@@ -586,10 +586,10 @@ _+getRandInt(min:int, max:int):int_
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>560</x>
-      <y>1352</y>
-      <w>268</w>
-      <h>212</h>
+      <x>388</x>
+      <y>474</y>
+      <w>67</w>
+      <h>34</h>
     </coordinates>
     <panel_attributes>app.game.tetris</panel_attributes>
     <additional_attributes/>
@@ -597,22 +597,14 @@ _+getRandInt(min:int, max:int):int_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>576</x>
-      <y>1368</y>
-      <w>76</w>
-      <h>188</h>
+      <x>392</x>
+      <y>478</y>
+      <w>19</w>
+      <h>22</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enum&gt;&gt;
 TileType
 -
--baseColor:Color
--lightColor:Color
--darkColor:Color
--spawnCol:int
--spawnRow:int
--dimesion:int
--rows:int
--cols:int
 +tiles:boolean[][][]
 +TypeI:TileType
 +TypeJ:TileType
@@ -624,24 +616,16 @@ TileType
 -
 _+random():TileType_
 +TileType(tiles:boolean[][][])
-+getBaseColor():Color
-+getLightColor():Color
-+getDarkColor():Color
-+getDimension():int
-+getSpawnColumn():int
-+getSpawnRow():int
-+getRows():int
-+getCols():int
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>668</x>
-      <y>1408</y>
-      <w>152</w>
-      <h>108</h>
+      <x>414</x>
+      <y>478</y>
+      <w>38</w>
+      <h>27</h>
     </coordinates>
     <panel_attributes>Tetris
 -
@@ -665,10 +649,10 @@ _+random():TileType_
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1384</x>
-      <y>1392</y>
-      <w>92</w>
-      <h>96</h>
+      <x>594</x>
+      <y>484</y>
+      <w>23</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>LoginView
 {innerclass
@@ -694,10 +678,10 @@ innerclass}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1304</x>
-      <y>1536</y>
-      <w>116</w>
-      <h>16</h>
+      <x>574</x>
+      <y>520</y>
+      <w>29</w>
+      <h>4</h>
     </coordinates>
     <panel_attributes>javax.swing::JPanel
 -
@@ -707,10 +691,10 @@ innerclass}
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1400</x>
-      <y>1484</y>
-      <w>12</w>
-      <h>60</h>
+      <x>598</x>
+      <y>507</y>
+      <w>3</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
@@ -718,10 +702,10 @@ innerclass}
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1364</x>
-      <y>1376</y>
-      <w>12</w>
-      <h>168</h>
+      <x>589</x>
+      <y>480</y>
+      <w>3</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;400.0;10.0;10.0</additional_attributes>
@@ -729,10 +713,10 @@ innerclass}
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1320</x>
-      <y>1484</y>
-      <w>12</w>
-      <h>60</h>
+      <x>578</x>
+      <y>507</y>
+      <w>3</w>
+      <h>15</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
@@ -740,10 +724,10 @@ innerclass}
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>948</x>
-      <y>1476</y>
-      <w>12</w>
-      <h>64</h>
+      <x>485</x>
+      <y>505</y>
+      <w>3</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
@@ -751,10 +735,10 @@ innerclass}
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>60</x>
-      <y>1224</y>
-      <w>260</w>
-      <h>276</h>
+      <x>263</x>
+      <y>442</y>
+      <w>65</w>
+      <h>69</h>
     </coordinates>
     <panel_attributes>appserver</panel_attributes>
     <additional_attributes/>
@@ -762,10 +746,10 @@ innerclass}
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>76</x>
-      <y>1236</y>
-      <w>72</w>
-      <h>40</h>
+      <x>267</x>
+      <y>445</y>
+      <w>18</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>AppServer
 -
@@ -779,10 +763,10 @@ _+randInt(min:int,max:int):int_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>168</x>
-      <y>1236</y>
-      <w>148</w>
-      <h>80</h>
+      <x>290</x>
+      <y>445</y>
+      <w>37</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>MySQL
 -
@@ -802,10 +786,10 @@ password:String
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>172</x>
-      <y>1324</y>
-      <w>140</w>
-      <h>28</h>
+      <x>291</x>
+      <y>467</y>
+      <w>35</w>
+      <h>7</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 RequestHandler
@@ -817,10 +801,10 @@ RequestHandler
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>64</x>
-      <y>1280</y>
-      <w>100</w>
-      <h>72</h>
+      <x>264</x>
+      <y>456</y>
+      <w>25</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>NetworkManager
 -
@@ -839,10 +823,10 @@ _+addHandler(handler:RequestHandler)_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>76</x>
-      <y>1368</y>
-      <w>140</w>
-      <h>28</h>
+      <x>267</x>
+      <y>478</y>
+      <w>35</w>
+      <h>7</h>
     </coordinates>
     <panel_attributes>Handler
 -
@@ -854,10 +838,10 @@ _+addHandler(handler:RequestHandler)_</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>192</x>
-      <y>1348</y>
-      <w>12</w>
-      <h>28</h>
+      <x>296</x>
+      <y>473</y>
+      <w>3</w>
+      <h>7</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
@@ -865,10 +849,10 @@ _+addHandler(handler:RequestHandler)_</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>244</x>
-      <y>1364</y>
-      <w>48</w>
-      <h>32</h>
+      <x>309</x>
+      <y>477</y>
+      <w>12</w>
+      <h>8</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enum&gt;&gt;
 GameType
@@ -880,10 +864,10 @@ TETRIS</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>76</x>
-      <y>1404</y>
-      <w>84</w>
-      <h>92</h>
+      <x>267</x>
+      <y>487</y>
+      <w>21</w>
+      <h>23</h>
     </coordinates>
     <panel_attributes>&lt;&lt;enum&gt;&gt;
 NetworkMethod
@@ -905,10 +889,10 @@ UPDATEGAMEDATA
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>0</x>
-      <y>1144</y>
-      <w>380</w>
-      <h>532</h>
+      <x>248</x>
+      <y>422</y>
+      <w>95</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=.
 Server</panel_attributes>
@@ -917,10 +901,10 @@ Server</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2828</x>
-      <y>0</y>
-      <w>44</w>
-      <h>16</h>
+      <x>955</x>
+      <y>136</y>
+      <w>11</w>
+      <h>4</h>
     </coordinates>
     <panel_attributes>lw=2
 ActiveClass</panel_attributes>
@@ -929,10 +913,10 @@ ActiveClass</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>504</x>
-      <y>1148</y>
-      <w>1104</w>
-      <h>532</h>
+      <x>374</x>
+      <y>423</y>
+      <w>276</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>lt=.
 Client</panel_attributes>
@@ -941,10 +925,10 @@ Client</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>136</x>
-      <y>524</y>
-      <w>704</w>
-      <h>536</h>
+      <x>274</x>
+      <y>266</y>
+      <w>176</w>
+      <h>134</h>
     </coordinates>
     <panel_attributes>lt=.
 Common</panel_attributes>
@@ -953,10 +937,10 @@ Common</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>932</x>
-      <y>724</y>
-      <w>116</w>
-      <h>32</h>
+      <x>481</x>
+      <y>317</y>
+      <w>29</w>
+      <h>8</h>
     </coordinates>
     <panel_attributes>AppServer
 -
@@ -967,10 +951,10 @@ port: 4455</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>932</x>
-      <y>636</y>
-      <w>116</w>
-      <h>36</h>
+      <x>481</x>
+      <y>295</y>
+      <w>29</w>
+      <h>9</h>
     </coordinates>
     <panel_attributes>MySQL Server
 -
@@ -982,10 +966,10 @@ datenbank: app</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>932</x>
-      <y>788</y>
-      <w>116</w>
-      <h>36</h>
+      <x>481</x>
+      <y>333</y>
+      <w>29</w>
+      <h>9</h>
     </coordinates>
     <panel_attributes>Apache Webserver
 -
@@ -997,10 +981,10 @@ profilbilder: /app/profileimages/&lt;uuid&gt;.png</panel_attributes>
   <element>
     <id>UMLDeployment</id>
     <coordinates>
-      <x>1100</x>
-      <y>728</y>
-      <w>76</w>
-      <h>24</h>
+      <x>523</x>
+      <y>318</y>
+      <w>19</w>
+      <h>6</h>
     </coordinates>
     <panel_attributes>AppClient
 </panel_attributes>
@@ -1009,10 +993,10 @@ profilbilder: /app/profileimages/&lt;uuid&gt;.png</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1044</x>
-      <y>796</y>
-      <w>40</w>
-      <h>20</h>
+      <x>509</x>
+      <y>335</y>
+      <w>10</w>
+      <h>5</h>
     </coordinates>
     <panel_attributes>lt=-()
 m2=HTTP
@@ -1022,10 +1006,10 @@ m2=HTTP
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1076</x>
-      <y>796</y>
-      <w>40</w>
-      <h>20</h>
+      <x>517</x>
+      <y>335</y>
+      <w>10</w>
+      <h>5</h>
     </coordinates>
     <panel_attributes>lt=)-
 m1=
@@ -1035,10 +1019,10 @@ m1=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1024</x>
-      <y>732</y>
-      <w>56</w>
-      <h>20</h>
+      <x>504</x>
+      <y>319</y>
+      <w>14</w>
+      <h>5</h>
     </coordinates>
     <panel_attributes>lt=-()
 m2=Unser Protokoll
@@ -1048,10 +1032,10 @@ m2=Unser Protokoll
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1072</x>
-      <y>732</y>
-      <w>36</w>
-      <h>20</h>
+      <x>516</x>
+      <y>319</y>
+      <w>9</w>
+      <h>5</h>
     </coordinates>
     <panel_attributes>lt=)-
 m1=
@@ -1061,10 +1045,10 @@ m1=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>980</x>
-      <y>668</y>
-      <w>24</w>
-      <h>32</h>
+      <x>493</x>
+      <y>303</y>
+      <w>6</w>
+      <h>8</h>
     </coordinates>
     <panel_attributes>lt=-()
 m2=SQL
@@ -1074,10 +1058,10 @@ m2=SQL
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>976</x>
-      <y>692</y>
-      <w>20</w>
-      <h>40</h>
+      <x>492</x>
+      <y>309</y>
+      <w>5</w>
+      <h>10</h>
     </coordinates>
     <panel_attributes>lt=)-
 m1=
@@ -1087,10 +1071,10 @@ m1=
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1104</x>
-      <y>748</y>
-      <w>12</w>
-      <h>64</h>
+      <x>524</x>
+      <y>323</y>
+      <w>3</w>
+      <h>16</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
