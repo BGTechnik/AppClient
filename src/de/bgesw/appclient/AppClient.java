@@ -21,7 +21,7 @@ import de.bgesw.app.data.encryption.NoEncryption;
 public class AppClient extends JFrame
 {
 	
-	public static Encryption encryption;
+	public static Encryption encryption;//PEEENISSSS
 	
 	public static AppClient instance;
 	
