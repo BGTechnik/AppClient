@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2.0">
+  <zoom_level>1</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>214</x>
+      <y>209</y>
+      <w>49</w>
+      <h>23</h>
+    </coordinates>
+    <panel_attributes>Chat
+-
+-player1:UUID
+-player2:UUID
+-messages:ArrayList&lt;Tuple&lt;UUID,String&gt;&gt;
+-
++Chat(player1:UUID,player2:UUID,messages:ArrayList&lt;Tuple&lt;UUID,String&gt;&gt;)
++Chat(string:String)
++getPlayer1():UUID
++getPlayer2():UUID
++getOther(uuid:UUID):UUID
++getMessages():ArrayList&lt;Tuple&lt;UUID,String&gt;&gt;
++put(sender:UUID,message:String)
++toString():String
++getType():int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>191</x>
+      <y>205</y>
+      <w>95</w>
+      <h>97</h>
+    </coordinates>
+    <panel_attributes>app.data</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>194</x>
+      <y>253</y>
+      <w>13</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>/DataPacket/
+-
+-
+/+toString() : String/
+/+getType() : int/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>214</x>
+      <y>236</y>
+      <w>69</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>GameData
+-
+-id:int
+-player1:UUID
+-player2:UUID
+-results:Tuple&lt;Integer,Integer&gt;[]
+-games:ArrayList&lt;GameType&gt;
+-
++GameData(id:int,player1:UUID,player2:UUID,games:ArrayList&lt;GameType&gt;,results:Tuple&lt;Integer,Integer&gt;[])
++GameData(id:int,string:String)
++getID():int
++getPlayer1():UUID
++getPlayer2():UUID
++getOther(uuid:UUID):UUID
++getResults():Tuple&lt;Integer,Integer&gt;[]
++isFinished():boolean
++getCurrentPlayer():UUID
++isCurrentPlayer(uuid:UUID):boolean
++getGame(round:int):GameType
++getRound():int
++put(round:int,player:int,value:int)
++put(round:int,uuid:UUID,value:int)
++sendUpdate()
++toString():String
++getType():int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>214</x>
+      <y>277</y>
+      <w>25</w>
+      <h>23</h>
+    </coordinates>
+    <panel_attributes>Profile
+-
+-uuid:UUID
+-name:String
+-xp:int
+_-levelups:int[]_
+-
++Profile(uuid:UUID,name:String,xp:int)
++Profile(string:String)
++getUUID():UUID
++getName():String
++getXP():int
++getLevel():int
++toString():String
++getType():int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>255</x>
+      <y>284</y>
+      <w>15</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Tuple&lt;A,B&gt;
+-
++a:A
++b:B
+-
++Tuple&lt;A,B&gt;(a:A,b:B)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>199</x>
+      <y>259</y>
+      <w>3</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>199</x>
+      <y>278</y>
+      <w>17</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>206</x>
+      <y>253</y>
+      <w>10</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>199</x>
+      <y>211</y>
+      <w>3</w>
+      <h>44</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;420.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>199</x>
+      <y>211</y>
+      <w>17</w>
+      <h>3</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>298</x>
+      <y>238</y>
+      <w>26</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>app.data.encryption</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>301</x>
+      <y>243</y>
+      <w>20</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>/Encryption/
+-
+-
++encrypt(source:String):String
++decrypt(source:String):String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>301</x>
+      <y>257</y>
+      <w>20</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>NoEncryption
+-
+-
++encrypt(source:String):String
++decrypt(source:String):String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>249</y>
+      <w>3</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>352</x>
+      <y>360</y>
+      <w>166</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>appclient</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>367</x>
+      <y>364</y>
+      <w>11</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+GameListType
+-
+ALL
+FINISHED
+RUNNING</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>354</x>
+      <y>364</y>
+      <w>12</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+GameType
+-
+FLAPPYBIRD
+TETRIS</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>364</y>
+      <w>27</w>
+      <h>12</h>
+    </coordinates>
+    <panel_attributes>ProfilePictureCache
+-
+_-images:HashMap&lt;UUID,BufferedImage&gt;_
+_-url:String_
+_-def:BufferedImage_
+-
+_+getImage(uuid:UUID):BufferedImage_
+_+getImage(url:String):BufferedImage_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>354</x>
+      <y>375</y>
+      <w>21</w>
+      <h>23</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+NetworkMethod
+-
+-method:int
+AUTHENTIFICATE
+GETPROFILE
+GETGAMEDATA
+GETCHAT
+NEWGAME
+GAMELIST
+FRIENDLIST
+UPDATEGAMEDATA
+-
++NetworkMethod(method:int)
++getID():int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>378</x>
+      <y>377</y>
+      <w>35</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>NetworkManager
+-
+_-sessionid:String_
+-
+_+query(method:NetworkMethod,data:String):String_
+_+query(method:int,data:String):String_
+_+newGame(against:UUID)_
+_+getProfile(uuid:UUID):Profile_
+_+getOwnProfile():Profile_
+_+getGameList(type:GameListType):ArrayList&lt;Integer&gt;_
+_+getFriendList():ArrayList&lt;UUID&gt;_
+_+getGameData(gameid:int):GameData_
+_+getChat(chatid:int):Chat_
+_+updateGameData(d:GameData)_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>415</x>
+      <y>366</y>
+      <w>29</w>
+      <h>61</h>
+    </coordinates>
+    <panel_attributes>/Game/
+-
+_+id:int_
+-type:GameType
+-score:int
+-pixels:Color[][]
+-bg_color:Color
+-draw_color:Color
+-paused:boolean
+-height:int
+-width:int
++ups:int
++gameover:int
+-data:GameData
+-
++Game(d:GameData)
+/+onUpdate()/
+/+onClick(p:Point)/
+/+onKeyPress(keycode:int)/
+/+onKeyRelease(keycode:int)/
++getType():GameType
++setUPS(ups:int)
++updater()
++setSize(width:int,height:int)
++getHeight():int
++getWidth():int
++setBackgroundColor(c:Color)
++getBackgroundColor():Color
++getImageAsArray():Color[][]
++getImage():Image
++clear()
++setColor(c:Color)
++drawPixel(x:int,y:int)
++drawFilledRectangle(px:int,py:int,w:int,h:int)
++isPaused():boolean
++setPaused(pause:boolean)
++gameover()
++getScore():int
++setScore(s:int)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>367</x>
+      <y>401</y>
+      <w>24</w>
+      <h>29</h>
+    </coordinates>
+    <panel_attributes>AppClient
+-
+_+encryption:Encryption_
+_+instance:AppClient_
+_+view:JPanel_
+_+gamecache:ArrayList&lt;GameData&gt;_
+_+friendcache:ArrayList&lt;Profile&gt;_
+_+profilecache:ArrayList&lt;Profile&gt;_
+_+ownprofile:Profile_
+_+COLOR_BG:Color_
+-
++AppClient()
++setDefaultButton(btn:JButton)
++frameUpdater(fps:int)
+_+main(args:String[])_
+_+randInt(min:int,max:int):int_
+_+refreshGameCache()_
+_+refreshFriendCache()_
+_+getProfile(uuid:UUID):Profile_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>372</x>
+      <y>443</y>
+      <w>14</w>
+      <h>4</h>
+    </coordinates>
+    <panel_attributes>javax.swing::JFrame
+-
+-</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>366</y>
+      <w>30</w>
+      <h>39</h>
+    </coordinates>
+    <panel_attributes>GameView
+{innerclass
+GameMouseListener
+implements MouseListener
+-
+-
++mouseClicked(e:MouseEvent)
++mouseEntered(e:MouseEvent)
++mouseExited(e:MouseEvent)
++mousePressed(e:MouseEvent)
++mouseReleased(e:MouseEvent)
+innerclass}
+{innerclass
+GameKeyListener
+implements KeyListener
+-
+-
++keyPressed(e:KeyEvent)
++keyReleased(e:KeyEvent)
++keyTyped(e:KeyEvent)
+innerclass}
+-
+-game:Game
+_-WIDTH:int_
+_-HEIGHT:int_
+_-CONTROL_HEIGHT:int_
+-img_exit:BufferedImage
+-img_pause:BufferedImage
+-
++GameView(parent:Component,game:Game)
++paintComponent(g:Graphics)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>446</x>
+      <y>367</y>
+      <w>30</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>MenuView
+{innerclass
+GameListPanel
+{innerclass
+GameListMouseListener
+implements MouseListener
+-
+-
++mouseClicked(e:MouseEvent)
++mouseEntered(e:MouseEvent)
++mouseExited(e:MouseEvent)
++mousePressed(e:MouseEvent)
++mouseReleased(e:MouseEvent)
+innerclass}
+-
+-
++GameListPanel()
++paintComponent(g:Graphics)
+innerclass}
+{innerclass
+FriendListPanel
+{innerclass
+FriendListMouseListener
+implements MouseListener
+-
+-
++mouseClicked(e:MouseEvent)
++mouseEntered(e:MouseEvent)
++mouseExited(e:MouseEvent)
++mousePressed(e:MouseEvent)
++mouseReleased(e:MouseEvent)
+innerclass}
+-
+-
++FriendListPanel()
++paintComponent(g:Graphics)
+innerclass}
+{innerclass
+ButtonListener
+implements ActionListener
+-
+-
++actionPerformed(e:ActionEvent)
+innerclass}
+-
++lbl_name:JLabel
++lbl_xp:JLabel
++btn_start:JButton
++gamelist:GameListPanel
++friendlist:FriendListPanel
+_+img_defaultprofile:BufferedImage_
+-
++MenuView(parent:Component)
++openGame(g:GameData)
++getNewGameInstance(d:GameData):Game
++paintComponent(g:Graphics)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>313</x>
+      <y>355</y>
+      <w>27</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>app.game.flappybird</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>315</x>
+      <y>359</y>
+      <w>23</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>FlappyBird
+--
+_-ID:int_
++r1:int
++r2:int
++h1:int
++h2:int
++bh:int
++jump:int
++jumpx:double
+--
++FlappyBird(d:GameData)
++onUpdate()
+_+getRandInt(min:int, max:int):int_
++onClick(p:Point)
++onKeyPress(keycode:int)
++onKeyRelease(keycode:int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>281</x>
+      <y>398</y>
+      <w>67</w>
+      <h>53</h>
+    </coordinates>
+    <panel_attributes>app.game.tetris</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>285</x>
+      <y>402</y>
+      <w>19</w>
+      <h>47</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+TileType
+-
+-baseColor:Color
+-lightColor:Color
+-darkColor:Color
+-spawnCol:int
+-spawnRow:int
+-dimesion:int
+-rows:int
+-cols:int
++tiles:boolean[][][]
++TypeI:TileType
++TypeJ:TileType
++TypeL:TileType
++TypeO:TileType
++TypeS:TileType
++TypeT:TileType
++TypeZ:TileType
+-
+_+random():TileType_
++TileType(tiles:boolean[][][])
++getBaseColor():Color
++getLightColor():Color
++getDarkColor():Color
++getDimension():int
++getSpawnColumn():int
++getSpawnRow():int
++getRows():int
++getCols():int
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>308</x>
+      <y>412</y>
+      <w>38</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>Tetris
+-
+-tile:Integer[][]
+-cx:int
+-cy:int
+-current:boolean[][]
+-rotation:int
+-ctype:TileType
+-
++Tetris(d:GameData)
++onUpdate()
++onClick(p:Point)
++drawTetris(tile:TileType)
++onKeyPress(keycode:int)
++KeyRelease(keycode:int)
++setTile(x:int, y:int, type:int)
++drawTile(sx:int, sy:int, base:Color, light:Color, dark:Color)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>487</x>
+      <y>408</y>
+      <w>23</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>LoginView
+{innerclass
+Blistener
+implements ActionListener
+-
+
+-
++actionPerformed(e:ActionEvent)
+innerclass}
+-
++font:Font
++tf_name:JTextField
++tf_password:JPasswordField
++btn_login:JButton
++lbl_status:JLabel
+-
++LoginView(parent:Component)
++paintComponent(g:Graphics)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>467</x>
+      <y>444</y>
+      <w>29</w>
+      <h>4</h>
+    </coordinates>
+    <panel_attributes>javax.swing::JPanel
+-
+-</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>491</x>
+      <y>431</y>
+      <w>3</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>482</x>
+      <y>404</y>
+      <w>3</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;400.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>471</x>
+      <y>431</y>
+      <w>3</w>
+      <h>15</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>378</x>
+      <y>429</y>
+      <w>3</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>156</x>
+      <y>366</y>
+      <w>65</w>
+      <h>69</h>
+    </coordinates>
+    <panel_attributes>appserver</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>369</y>
+      <w>18</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>AppServer
+-
+_+mysql:MySQL_
+_+encryption:Encryption_
+-
+_+main(args:String[])_
+_+randInt(min:int,max:int):int_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>183</x>
+      <y>369</y>
+      <w>37</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>MySQL
+-
+c:Connection
+host:String
+port:String
+database:String
+username:String
+password:String
+-
++MySQL(ho:String,po:String,db:String,un:String,pw:String)
+-conn():Connection
++update(q:String)
++query(q:String):ResultSet</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>184</x>
+      <y>391</y>
+      <w>35</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+RequestHandler
+-
+-
++handle(sessionid:String,method:int,data:String):String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>157</x>
+      <y>380</y>
+      <w>25</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>NetworkManager
+-
+_-handerList:List&lt;RequestHandler&gt;_
+_+sessions:HashMap&lt;String,UUID&gt;_
+_-thread:Thread_
+_-port:int_
+-
+_+init(port:int)_
+_+start()_
+_+stop()_
+_+getListenPort():int_
+_+addHandler(handler:RequestHandler)_</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>402</y>
+      <w>35</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>Handler
+-
+-
++handle(sessionid:String,method:int,data:String):String
++randomGameList():String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>189</x>
+      <y>397</y>
+      <w>3</w>
+      <h>7</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>202</x>
+      <y>401</y>
+      <w>12</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+GameType
+-
+FLAPPYBIRD
+TETRIS</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>160</x>
+      <y>411</y>
+      <w>21</w>
+      <h>23</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;enum&gt;&gt;
+NetworkMethod
+-
+-method:int
+AUTHENTIFICATE
+GETPROFILE
+GETGAMEDATA
+GETCHAT
+NEWGAME
+GAMELIST
+FRIENDLIST
+UPDATEGAMEDATA
+-
++NetworkMethod(method:int)
++getID():int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>141</x>
+      <y>346</y>
+      <w>95</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=.
+Server</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>848</x>
+      <y>60</y>
+      <w>11</w>
+      <h>4</h>
+    </coordinates>
+    <panel_attributes>lw=2
+ActiveClass</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>267</x>
+      <y>347</y>
+      <w>276</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=.
+Client</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>168</x>
+      <y>187</y>
+      <w>176</w>
+      <h>134</h>
+    </coordinates>
+    <panel_attributes>lt=.
+Common</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>374</x>
+      <y>241</y>
+      <w>29</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>AppServer
+-
+addresse: 192.168.1.82
+port: 4455</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>374</x>
+      <y>219</y>
+      <w>29</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>MySQL Server
+-
+addresse: 192.168.1.82
+port: 3306
+datenbank: app</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>374</x>
+      <y>257</y>
+      <w>29</w>
+      <h>9</h>
+    </coordinates>
+    <panel_attributes>Apache Webserver
+-
+addresse: 192.168.1.82
+port: 80
+profilbilder: /app/profileimages/&lt;uuid&gt;.png</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLDeployment</id>
+    <coordinates>
+      <x>416</x>
+      <y>242</y>
+      <w>19</w>
+      <h>6</h>
+    </coordinates>
+    <panel_attributes>AppClient
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>402</x>
+      <y>259</y>
+      <w>10</w>
+      <h>5</h>
+    </coordinates>
+    <panel_attributes>lt=-()
+m2=HTTP
+</panel_attributes>
+    <additional_attributes>10.0;20.0;80.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>259</y>
+      <w>10</w>
+      <h>5</h>
+    </coordinates>
+    <panel_attributes>lt=)-
+m1=
+</panel_attributes>
+    <additional_attributes>20.0;20.0;80.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>397</x>
+      <y>243</y>
+      <w>14</w>
+      <h>5</h>
+    </coordinates>
+    <panel_attributes>lt=-()
+m2=Unser Protokoll
+</panel_attributes>
+    <additional_attributes>60.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>409</x>
+      <y>243</y>
+      <w>9</w>
+      <h>5</h>
+    </coordinates>
+    <panel_attributes>lt=)-
+m1=
+</panel_attributes>
+    <additional_attributes>20.0;20.0;70.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>386</x>
+      <y>227</y>
+      <w>6</w>
+      <h>8</h>
+    </coordinates>
+    <panel_attributes>lt=-()
+m2=SQL
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>385</x>
+      <y>233</y>
+      <w>5</w>
+      <h>10</h>
+    </coordinates>
+    <panel_attributes>lt=)-
+m1=
+</panel_attributes>
+    <additional_attributes>20.0;20.0;20.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>417</x>
+      <y>247</y>
+      <w>3</w>
+      <h>16</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
+  </element>
+</diagram>
