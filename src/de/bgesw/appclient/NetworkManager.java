@@ -18,7 +18,7 @@ public class NetworkManager {
 	
 	private static String sessionid = "null"; //SessionID mit der man sich am Server authentifiziert
 	
-	public static String query(NetworkMethod method,String data) //Wrapper f¸r query(int,String)
+	public static String query(NetworkMethod method,String data) //Wrapper fÔøΩr query(int,String)
 	{
 		return query(method.getID(),data);
 	}
@@ -34,17 +34,18 @@ public class NetworkManager {
 			PrintWriter writer = new PrintWriter(out);
 			InputStream in = s.getInputStream();
 			BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-			writer.write(sessionid+"//"+method+"//"+data+"\n"); //Anfrage senden
+			writer.write(AppClient.encryption.encrypt(sessionid+"//"+method+"//"+data)+"\n"); //Anfrage senden
 			writer.flush();
 			while((str=reader.readLine())!=null) //Antwort/en lesen
 			{
-				int status = Integer.parseInt(str.split("//")[0]); //Statuscode parsen
+				String string = AppClient.encryption.decrypt(str);
+				int status = Integer.parseInt(string.split("//")[0]); //Statuscode parsen
 				if(status==1) //Wenn positiv
 				{
 					result="";
-					if(str.split("//").length>1)
+					if(string.split("//").length>1)
 					{
-						result=str.split("//")[1]; //Daten parsen
+						result=string.split("//")[1]; //Daten parsen
 					}
 				}
 				break; //Maximal eine Antwort lesen
@@ -136,8 +137,8 @@ public class NetworkManager {
 		return null;
 	}
 	
-	public static void updateGameData(GameData d) //Ver‰nderte Spieldaten zum Server senden
+	public static void updateGameData(GameData d) //Ver√§nderte Spieldaten zum Server senden
 	{
-		query(NetworkMethod.UPDATEGAMEDATA,""+d.getID()+"|"+d.toString());
+		query(NetworkMethod.UPDATEGAMEDATA,""+d.getID()+";"+d.toString());
 	}
 }

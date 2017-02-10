@@ -21,7 +21,7 @@ import de.bgesw.app.data.encryption.NoEncryption;
 public class AppClient extends JFrame
 {
 	
-	public static Encryption encryption; //Verwendete Verschlüsselung
+	public static Encryption encryption; //Verwendete Verschlï¿½sselung
 	
 	public static AppClient instance; //Instanz des Clients
 	
@@ -35,14 +35,14 @@ public class AppClient extends JFrame
 	
 	public AppClient()
 	{
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE); //Beende beim Schließen des Fensters
+		this.setDefaultCloseOperation(EXIT_ON_CLOSE); //Beende beim Schlieï¿½en des Fensters
 		this.setTitle("BG Spiel"); //Fenstertitel
-		this.setSize(800, 450); //Fenstergröße
+		this.setSize(800, 450); //Fenstergrï¿½ï¿½e
 		view = new LoginView(this); //View auf einen neuen LoginView setzen
 		this.setResizable(false); //Nicht skalierbar
-		this.setVisible(true); //Fenster öffnen
-		this.add(view); //View hinzufügen
-		this.setLayout(null); //Entfernen des Layout Managers um die Objekte selbt anordnen zu können -> Alle Child-Elemente müssen ihre Bounds selbst definieren
+		this.setVisible(true); //Fenster ï¿½ffnen
+		this.add(view); //View hinzufï¿½gen
+		this.setLayout(null); //Entfernen des Layout Managers um die Objekte selbt anordnen zu kï¿½nnen -> Alle Child-Elemente mï¿½ssen ihre Bounds selbst definieren
 		try {
 			this.setIconImage(ImageIO.read(getClass().getResource("icon.png"))); //Fenstericon
 		} catch (IOException e) {
@@ -53,7 +53,7 @@ public class AppClient extends JFrame
 	
 	public void setDefaultButton(JButton btn)
 	{
-		this.getRootPane().setDefaultButton(btn); //Default Button = Button der betätigt wird wenn Enter gedrückt wird
+		this.getRootPane().setDefaultButton(btn); //Default Button = Button der betÃ¤tigt wird wenn Enter gedrÃ¼ckt wird
 	}
 	
 	public void frameUpdater(int fps)
@@ -78,10 +78,10 @@ public class AppClient extends JFrame
 	public static void main(String [] args)
 	{
 		instance=new AppClient();
-		encryption = new NoEncryption(); // NoEncryption ver/entschlüsselt die Strings nicht
+		encryption = new NoEncryption(); // NoEncryption ver/entschlÃ¼sselt die Strings nicht
 	}
 	
-	public static int randInt(int min,int max) //Zufälliger Integer in: min<=x<=max
+	public static int randInt(int min,int max) //Zufï¿½lliger Integer in: min<=x<=max
 	{
 		Random r = new Random();
 		return r.nextInt(max-min)+min;
@@ -105,7 +105,7 @@ public class AppClient extends JFrame
 		}
 	}
 	
-	public static Profile getProfile(UUID uuid,boolean forcereload) //Hole Profil aus dem Cache, wenn nicht vorhanden, vom Server [forcereload=true sorgt für ein gezwungenes neuladen vom Server]
+	public static Profile getProfile(UUID uuid,boolean forcereload) //Hole Profil aus dem Cache, wenn nicht vorhanden, vom Server [forcereload=true sorgt fï¿½r ein gezwungenes neuladen vom Server]
 	{
 		Profile p = null;
 		for(Profile pr : profilecache)if(pr.getUUID().equals(uuid))p=pr;

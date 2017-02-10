@@ -16,12 +16,11 @@ public class FlappyBird extends Game {
 	int h1 = getRandInt(10,300); //Height of the first tube (Inverted)
 	int h2 = getRandInt(10,300); //Height of the second tube (Inverted)
 	int bh = 10;		//Bird Height (Inverted)
-	int jump = 0;		//zu jumpende höhe?
-	double jumpx = 0; 	//position der Flugkurve
+	int jump = 0;		//Jumpticks
 	
 	public FlappyBird(GameData d) {
 		super(d);
-		setUPS(10);
+		setUPS(30);
 		updater();
 		setBackgroundColor(Color.CYAN);
 	}
@@ -30,49 +29,17 @@ public class FlappyBird extends Game {
 		if(isPaused())return;
 		if(r1==-1000)r1=getWidth()-50;
 		if(r2==-1000)r2=(2*getWidth())-(getWidth()/2);
-		
-		/*if(jump>0)												//der jump part 	 
-		{
-			
-			if(bh>=4)
-			{
-											//Flugkurve mit 0.1 statt -0.1 hier einfügen
-				int t=0;
-				
-				jumpx++;
-				t=(int)jumpx; 
-				bh=bh+(int) (0.1*(3*t*0.7-(1.5/2*Math.pow(t,2))));						
-			}else{							
-				jumpx=0;						
-			}								
-			jump--;
-		}else{
-			int t=0;
-			jumpx++;
-			t=(int)jumpx; 
-			bh=bh+(int) (-0.1*(3*t*0.7-(1.5/2*Math.pow(t,2))));
-			//jumpx++;
-			//double j = Math.pow(jumpx, 2)/10;
-			//bh+=j; 
-		}*/
 		if(jump==0){
-			
-			jumpx++;
-			int t=(int)jumpx; 
-			bh=bh-(int) (0.1*(3*t*0.7-(1.5/2*Math.pow(t,2))));		
+			bh=bh+(int)8;		
 		}else{
-			int t=0;
-			jumpx++;
-			t=(int)jumpx; 
-			bh=bh+(int) (0.1*(3*t*0.7-(1.5/2*Math.pow(t,2))));
+			int sub = (int)Math.pow(jump*3, 2)/50;
+			if(sub<2)sub=2;
+			bh=bh-sub;
 			jump--;
 		}
-		//if(jump==1)jumpx=0;
-		//System.out.println(" r1:"+ r1+" r2:"+r2+" h1:"+h1+" h2:"+h2+" bh:"+bh+" jump:"+jump);	//height=420 width=800
-		
-		if((r1>=350&&r1<=420)&&(bh<=h1||bh>=h1+80))gameover();
-		if((r2>=350&&r2<=420)&&(bh<=h2||bh>=h2+80))gameover();
-				
+		if((r1>=350&&r1<=420)&&(bh<=h1||bh>=h1+120))gameover();
+		if((r2>=350&&r2<=420)&&(bh<=h2||bh>=h2+120))gameover();
+		if(bh>=getHeight()-20)gameover();
 		r1-=3;													//move pipe1 left
 		r2-=3;													//move pipe2 left
 		if(r1<-100)												//set pipe1 height?
@@ -88,10 +55,10 @@ public class FlappyBird extends Game {
 		clear();
 		setColor(Color.GREEN);									//draw pipes
 		drawFilledRectangle(r1,0,50,h1);						//draw pipe1
-		drawFilledRectangle(r1,h1+100,50,getHeight()-h1+100);	//draw pipe1
+		drawFilledRectangle(r1,h1+120,50,getHeight()-h1+120);	//draw pipe1
 		
 		drawFilledRectangle(r2,0,50,h2);						//draw pipe2
-		drawFilledRectangle(r2,h2+100,50,getHeight()-h2+100);	//draw pipe2
+		drawFilledRectangle(r2,h2+120,50,getHeight()-h2+120);	//draw pipe2
 		
 		setColor(Color.YELLOW);									//draw flappy dot
 		drawFilledRectangle(getWidth()/2,bh,20,20);				//draw flappy dot
@@ -108,7 +75,7 @@ public class FlappyBird extends Game {
 	}
 	
 	public void onKeyPress(int keycode) {
-		if(keycode==32){jump=3;		}
+		if(keycode==32){jump=10;		}
 		if(keycode==69)setUPS(1);
 		
 	}
