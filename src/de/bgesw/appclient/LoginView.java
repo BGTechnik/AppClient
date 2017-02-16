@@ -2,12 +2,16 @@ package de.bgesw.appclient;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+import java.io.InputStream;
 
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -18,6 +22,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JRootPane;
 import javax.swing.JTextField;
 
+
+
 public class LoginView extends JPanel {
 	
 
@@ -25,7 +31,7 @@ public class LoginView extends JPanel {
 	JTextField tf_name; //Eingabefeld Name
 	JPasswordField tf_password; //Eingabefeld Passwort
 	JButton btn_login; //Login Button
-	JLabel lbl_status; //Status Label für Fehlerausgabe
+	JLabel lbl_status; //Status Label fï¿½r Fehlerausgabe
 	
 	public LoginView(Component parent)
 	{
@@ -38,10 +44,11 @@ public class LoginView extends JPanel {
 		btn_login = new JButton("Einloggen");
 		btn_login.setBounds((parent.getWidth()/2)-75, (parent.getHeight()/2)+50, 150, 30);
 		btn_login.addActionListener(new BListener());
-		((AppClient)parent).setDefaultButton(btn_login); //Default Button wird gedrückt, wenn Enter gedrückt wird
+		((AppClient)parent).setDefaultButton(btn_login); //Default Button wird gedrï¿½ckt, wenn Enter gedrï¿½ckt wird
 		lbl_status = new JLabel("");
 		lbl_status.setBounds((parent.getWidth()/2)-75, (parent.getHeight()/2)+90, 150, 30);
 		lbl_status.setForeground(Color.RED); //Schriftfarbe
+		
 		this.add(tf_name);
 		this.add(tf_password);
 		this.add(btn_login);
@@ -51,12 +58,30 @@ public class LoginView extends JPanel {
 	}
 	
 	@Override
-	public void paintComponent(Graphics g) //Zeichenmethod, wird derzeit nicht verwendet
-	{
+	public void paintComponent(Graphics g) //Zeichenmethod, wird derzeit nicht verwendet //added Title mehr oder weniger
+	{	
+		Font LARGE_FONT = new Font("Tahoma", Font.BOLD, 13);
 		super.paintComponent(g);
+		InputStream is = LoginView.class.getResourceAsStream("/de/bgesw/appclient/Mario.ttf");
+		Font input = null;
+		try {
+			input = Font.createFont(Font.TRUETYPE_FONT, is);
+		} catch (FontFormatException e) {
+			System.out.println("Fuck");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("Fuck2");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Font Mario = input.deriveFont(40f);	
+		g.setFont(Mario);
+		g.drawString("GameDuell",260 ,100 );
 	}
 	
-	class BListener implements ActionListener //Listener für den Login Button
+	class BListener implements ActionListener //Listener fï¿½r den Login Button
 	{
 		public void actionPerformed(ActionEvent e)
 		{
@@ -66,7 +91,7 @@ public class LoginView extends JPanel {
 				AppClient.ownprofile=NetworkManager.getOwnProfile(); //Eigenes Profil vom Server laden
 				AppClient.instance.remove(AppClient.view); //LoginView entfernen
 				AppClient.view=new MenuView(AppClient.instance); //Neuen MenuView setzen
-				AppClient.instance.add(AppClient.view); //View zum Fenster hinzufügen
+				AppClient.instance.add(AppClient.view); //View zum Fenster hinzufï¿½gen
 				AppClient.instance.repaint(); //Fenster neuzeichnen
 			}else{
 				lbl_status.setText("Fehler beim Login!"); //Fehler ausgeben, bei nicht erfolgreichem Login
