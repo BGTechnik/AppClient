@@ -36,9 +36,18 @@ public class FlappyBird extends Game {
 			if(sub<2)sub=2;
 			bh=bh-sub;
 			jump--;
-		}
+		}														//Gameovers
 		if((r1>=350&&r1<=420)&&(bh<=h1||bh>=h1+120))gameover();
 		if((r2>=350&&r2<=420)&&(bh<=h2||bh>=h2+120))gameover();
+																//Scores setzen
+		if((r1>=350&&r1<=352)&&(bh>=h1||bh<h1+120)){
+			setScore(getScore() +100);
+		}
+		if((r2>=350&&r2<=352)&&(bh>=h2||bh<h2+120)){
+			setScore(getScore() +100);
+		}
+		
+		
 		if(bh>=getHeight()-20)gameover();
 		r1-=3;													//move pipe1 left
 		r2-=3;													//move pipe2 left
@@ -62,6 +71,7 @@ public class FlappyBird extends Game {
 		
 		setColor(Color.YELLOW);									//draw flappy dot
 		drawFilledRectangle(getWidth()/2,bh,20,20);				//draw flappy dot
+		
 	}
 	
 	private static int getRandInt(int min,int max)
