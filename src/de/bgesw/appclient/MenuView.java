@@ -28,9 +28,8 @@ public class MenuView extends JPanel {
 	
 	JLabel lbl_name; //Namesanzeige
 	JLabel lbl_xp; //XP Anzeige
-	JButton btn_start;
-	GameListPanel gamelist; //Anzeige für die Spielliste
-	FriendListPanel friendlist; //Anzeige für die Freundesliste
+	GameListPanel gamelist; //Anzeige fÃ¼r die Spielliste
+	FriendListPanel friendlist; //Anzeige fï¿½r die Freundesliste
 	public static BufferedImage img_defaultprofile; //Standard Profilbild
 	
 	public MenuView(Component parent)
@@ -49,18 +48,13 @@ public class MenuView extends JPanel {
 		lbl_xp = new JLabel("XP: "+AppClient.ownprofile.getXP());
 		lbl_xp.setForeground(Color.WHITE);
 		lbl_xp.setBounds(parent.getWidth()-165, 18, 100, 20);
-		btn_start = new JButton("Start");
-		btn_start.setBounds((parent.getWidth()/2)-50, 100, 100, 20);
-		btn_start.setActionCommand("start"); //Action Command setzen
-		btn_start.addActionListener(new ButtonListener()); //Button Listener registrieren
 		gamelist = new GameListPanel();
-		gamelist.setBounds(10, 10, 200, 120);
+		gamelist.setBounds(10, 10, 350, 400);
 		friendlist = new FriendListPanel();
 		friendlist.setBounds(parent.getWidth()-200, 40, 200, parent.getHeight()-40);
 		friendlist.setBackground(new Color(0,0,0,0));
 		this.add(lbl_name);
 		this.add(lbl_xp);
-		this.add(btn_start);
 		this.add(gamelist);
 		this.add(friendlist);
 		//Daten laden
@@ -77,7 +71,7 @@ public class MenuView extends JPanel {
 		AppClient.view.requestFocusInWindow();
 	}
 	
-	public Game getNewGameInstance(GameData d) //Erstelle ein Game Objekt für die gegebenen Spieldaten
+	public Game getNewGameInstance(GameData d) //Erstelle ein Game Objekt fï¿½r die gegebenen Spieldaten
 	{
 		switch(d.getGame(d.getRound()))
 		{
@@ -100,7 +94,7 @@ public class MenuView extends JPanel {
 		gr.drawImage(ProfilePictureCache.getImage(AppClient.ownprofile.getUUID()), this.getParent().getWidth()-width+8,8, new Color(0x58,0x58,0x58,0x00),null);
 	}
 	
-	static class GameListPanel extends JPanel //Panel für die Spielliste
+	static class GameListPanel extends JPanel //Panel fï¿½r die Spielliste
 	{
 		GameListPanel()
 		{
@@ -112,18 +106,18 @@ public class MenuView extends JPanel {
 		public void paintComponent(Graphics g)
 		{
 			super.paintComponent(g);
-			int width = 200;
-			int height = 120;
+			int width = 350;
+			int height = 400;
 			Graphics2D gr = (Graphics2D)g;
 			int dr = 0;
-			for(int i=0;i<AppClient.gamecache.size()&&dr<5;i++){ //Alle laufenden Spiele zeichnen, aber maximal 5
+			for(int i=0;i<AppClient.gamecache.size()&&dr<7;i++){ //Alle laufenden Spiele zeichnen, aber maximal 5
 				if(!AppClient.gamecache.get(i).isFinished())
 				{
 					GameData d = AppClient.gamecache.get(i);
 					Profile against = AppClient.getProfile(d.getOther(AppClient.ownprofile.getUUID()), false);
 					String state = "Warte auf Spieler";
 					if(d.isCurrentPlayer(AppClient.ownprofile.getUUID()))state="Du bist dran";
-					gr.drawString("Gegen: "+against.getName()+" | "+state, 5, 30+(i*30));
+					gr.drawString("Gegen: "+against.getName()+" | "+d.getGame(d.getRound())+" | "+state, 5, 30+(i*30));
 					dr++;
 				}
 			}
@@ -143,7 +137,7 @@ public class MenuView extends JPanel {
 				if(e.getY()>=0 && e.getY()<30) //Klick auf Spiel1
 				{
 					GameData d = dg.get(0);
-					if(d.isCurrentPlayer(AppClient.ownprofile.getUUID())) //Überprüfen ob der Spieler an der Reihe ist
+					if(d.isCurrentPlayer(AppClient.ownprofile.getUUID())) //ï¿½berprï¿½fen ob der Spieler an der Reihe ist
 					{
 						((MenuView)AppClient.view).openGame(d); //Spiel starten
 					}
@@ -172,11 +166,12 @@ public class MenuView extends JPanel {
 		}
 	}
 	
-	static class FriendListPanel extends JPanel //Panel für die Freundesliste
+	static class FriendListPanel extends JPanel //Panel fï¿½r die Freundesliste
 	{
+		
 		FriendListPanel()
 		{
-			this.addMouseListener(new FriendListMouseListener());
+			this.addMouseListener(new FriendListMouseListener(this));
 			this.setFocusable(true);
 		}
 		
@@ -195,64 +190,53 @@ public class MenuView extends JPanel {
 		}
 		class FriendListMouseListener implements MouseListener //TODO Dynamische Elementerkennung
 		{
+			
+			FriendListPanel parent;
+			
+			public FriendListMouseListener(FriendListPanel p)
+			{
+				this.parent=p;
+			}
+			
 			public void mouseClicked(MouseEvent e) {
+				UUID f_UUID=null;
 				if(e.getY()>=0 && e.getY()<30)
 				{
-					System.out.println("Friend1");
+					if(AppClient.friendcache.size()>1){
+						System.out.println("Friend1");
+						f_UUID=AppClient.friendcache.get(0).getUUID();
+						System.out.println(f_UUID.toString());
+						NetworkManager.newGame(f_UUID);
+						AppClient.refreshGameCache();
+						parent.repaint();
+					}
+					
 				}
 				if(e.getY()>=30 && e.getY()<60)
 				{
-					System.out.println("Friend2");
+					if(AppClient.friendcache.size()>=2){
+						System.out.println("Friend2");
+						f_UUID=AppClient.friendcache.get(1).getUUID();
+						System.out.println(f_UUID.toString());
+						NetworkManager.newGame(f_UUID);
+						AppClient.refreshGameCache();
+					}
 				}
 				if(e.getY()>=60 && e.getY()<90)
 				{
-					System.out.println("Friend3");
+					if(AppClient.friendcache.size()>=3){
+						System.out.println("Friend3");
+						f_UUID=AppClient.friendcache.get(2).getUUID();
+						System.out.println(f_UUID.toString());
+						NetworkManager.newGame(f_UUID);
+						AppClient.refreshGameCache();
+					}
 				}
 			}
 			public void mouseEntered(MouseEvent e) {}
 			public void mouseExited(MouseEvent e) {}
 			public void mousePressed(MouseEvent e) {}
 			public void mouseReleased(MouseEvent e) {}
-		}
-	}
-	
-	class ButtonListener implements ActionListener
-	{
-		public void actionPerformed(ActionEvent e) {
-			if(e.getActionCommand().equals("start"))
-			{	
-				/*Random randomGenerator = new Random();
-				int id = randomGenerator.nextInt(2)+1;
-			
-				if(id == 1)
-				{
-				AppClient.instance.remove(AppClient.view);
-				AppClient.view=new GameView(AppClient.instance,new Tetris());
-				AppClient.instance.add(AppClient.view);
-				AppClient.instance.repaint();
-				AppClient.view.requestFocusInWindow();
-				}else{
-					if(id == 2)
-					{
-					AppClient.instance.remove(AppClient.view);
-					AppClient.view=new GameView(AppClient.instance,new FlappyBird());
-					AppClient.instance.add(AppClient.view);
-					AppClient.instance.repaint();
-					AppClient.view.requestFocusInWindow();
-					}else
-					{
-						System.out.println("Scheiße"+id+"Scheiße");
-					}
-					
-				}
-				System.out.println(id);*/
-				
-				NetworkManager.newGame(UUID.randomUUID()); //Neues Spiel gegen Random UUID !ACHTUNG! Nicht mehr benutzen!!! Das Profil einer Random UUID wird nicht gefunden == CRASH!
-				for(Integer i : NetworkManager.getGameList(GameListType.ALL))
-				{
-					System.out.println(""+i);
-				}
-			}
 		}
 	}
 	

@@ -147,13 +147,38 @@ public class Tetris extends Game {
 		System.out.println("press:"+keycode);
 		if(keycode==39)
 		{
-			cx++;
+			int sub=0;
+			for(int x=0;x<4;x++)
+				for(int y=0;y<4;y++)
+				{
+					if(current[x][y]){sub=x;break;}
+				}
+			int cxd = cx;
+			cxd++;
+			if(cxd>9-sub)cxd=9-sub;
+			cx=cxd;
 		}
 		if(keycode==37)
 		{
-			cx--;
+			int sub=0;
+			for(int x=0;x<4;x++)
+			{
+				boolean isEmpty = true;
+				for(int y=0;y<4;y++)
+				{
+					if(current[x][y]){isEmpty=false;break;}
+				}
+				if(isEmpty)
+				{
+					sub++;
+					break;
+				}
+			}
+			int cxd = cx;
+			cxd--;
+			if(cxd<0-sub)cxd=0-sub;
+			cx=cxd;
 		}
-		
 		if(keycode==81)
 		{
 			//left
@@ -181,8 +206,7 @@ public class Tetris extends Game {
 		}
 		
 		if(keycode==32)
-		{	
-			
+		{
 			setUPS(10);
 			System.out.print("schnell");
 		}
@@ -194,7 +218,6 @@ public class Tetris extends Game {
 		if(keycode==32)
 		{	
 			setUPS(2);
-			
 			System.out.print("normal");
 		}
 	}
