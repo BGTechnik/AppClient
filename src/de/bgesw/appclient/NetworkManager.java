@@ -68,9 +68,11 @@ public class NetworkManager {
 		return false;
 	}
 	
-	public static void newGame(UUID against) //Neues Spiel anfordern
+	public static boolean newGame(UUID against) //Neues Spiel anfordern
 	{
 		String result = query(NetworkMethod.NEWGAME,against.toString());
+		if(result.equalsIgnoreCase("running"))return false;
+		return true;
 	}
 	
 	public static Profile getProfile(UUID uuid) //Profil abfragen

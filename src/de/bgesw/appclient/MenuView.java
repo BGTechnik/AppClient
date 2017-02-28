@@ -17,6 +17,7 @@ import java.util.UUID;
 import javax.imageio.ImageIO;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 import de.bgesw.app.data.GameData;
@@ -206,9 +207,6 @@ public class MenuView extends JPanel {
 						System.out.println("Friend1");
 						f_UUID=AppClient.friendcache.get(0).getUUID();
 						System.out.println(f_UUID.toString());
-						NetworkManager.newGame(f_UUID);
-						AppClient.refreshGameCache();
-						parent.repaint();
 					}
 					
 				}
@@ -218,8 +216,6 @@ public class MenuView extends JPanel {
 						System.out.println("Friend2");
 						f_UUID=AppClient.friendcache.get(1).getUUID();
 						System.out.println(f_UUID.toString());
-						NetworkManager.newGame(f_UUID);
-						AppClient.refreshGameCache();
 					}
 				}
 				if(e.getY()>=60 && e.getY()<90)
@@ -228,9 +224,18 @@ public class MenuView extends JPanel {
 						System.out.println("Friend3");
 						f_UUID=AppClient.friendcache.get(2).getUUID();
 						System.out.println(f_UUID.toString());
-						NetworkManager.newGame(f_UUID);
-						AppClient.refreshGameCache();
 					}
+				}
+				if(f_UUID!=null)
+				{
+					if(NetworkManager.newGame(f_UUID))
+					{
+						AppClient.refreshGameCache();
+						parent.repaint();
+					}else{
+						JOptionPane.showMessageDialog(null, "Es läuft bereits ein Spiel gegen diese Person!","Fehler!",JOptionPane.WARNING_MESSAGE);
+					}
+					
 				}
 			}
 			public void mouseEntered(MouseEvent e) {}
