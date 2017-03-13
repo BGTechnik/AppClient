@@ -203,27 +203,20 @@ public class MenuView extends JPanel {
 				UUID f_UUID=null;
 				if(e.getY()>=0 && e.getY()<30)
 				{
-					if(AppClient.friendcache.size()>1){
-						System.out.println("Friend1");
-						f_UUID=AppClient.friendcache.get(0).getUUID();
-						System.out.println(f_UUID.toString());
-					}
-					
+					if(AppClient.friendcache.size()>1){						
+						f_UUID=AppClient.friendcache.get(0).getUUID();						
+					}					
 				}
 				if(e.getY()>=30 && e.getY()<60)
 				{
-					if(AppClient.friendcache.size()>=2){
-						System.out.println("Friend2");
+					if(AppClient.friendcache.size()>=2){						
 						f_UUID=AppClient.friendcache.get(1).getUUID();
-						System.out.println(f_UUID.toString());
 					}
 				}
 				if(e.getY()>=60 && e.getY()<90)
 				{
 					if(AppClient.friendcache.size()>=3){
-						System.out.println("Friend3");
 						f_UUID=AppClient.friendcache.get(2).getUUID();
-						System.out.println(f_UUID.toString());
 					}
 				}
 				if(f_UUID!=null)
@@ -234,8 +227,7 @@ public class MenuView extends JPanel {
 						parent.repaint();
 					}else{
 						JOptionPane.showMessageDialog(null, "Es läuft bereits ein Spiel gegen diese Person!","Fehler!",JOptionPane.WARNING_MESSAGE);
-					}
-					
+					}					
 				}
 			}
 			public void mouseEntered(MouseEvent e) {}

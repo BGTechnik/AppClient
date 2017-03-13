@@ -42,13 +42,18 @@ public class Tetris extends Game {
 					if(cy+y==20)
 					{
 						coll=true;
+					
 					}else{
 						if(tiles[cx+x][cy+y]!=null)if(tiles[cx+x][cy+y]!=-1)coll=true;
+						
 					}
 				}
 			}
 		if(coll)
 		{
+			
+			if(cy<=1)gameover();
+			
 			for(int x=0;x<4;x++)
 				for(int y=0;y<4;y++)
 				{
@@ -105,6 +110,7 @@ public class Tetris extends Game {
 		
 		//Malen
 		this.clear();
+		System.out.println("y"+cy);
 		this.drawRectangle(10, 20, 20, 10);
 		setColor(Color.BLACK);
 		this.drawFilledRectangle(0, 0, 160, 320);
